@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>View</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div class="className" th:insert="Fragment/Header::header">
+</div>
+
+<section>
+	<div class="container" th:each="med:${medicine}">
+		<div class="d-flex flex-column mb-3">
+			<h1 class="p-2" th:text="${med.product_name}"></h1>
+			<div class="p-2" th:text="${med.product_price}"></div>
+			<h1 class="p-2">Description</h1>
+			<h4 class="p-2 fs-6 text fw-light" th:text="${med.medicine_desc}"></h4>
+			<h1 class="p-2">Manufacture</h1>
+			<h4 class="p-2 fs-6 text fw-light" th:text="${med.product_manufactured}"></h4>
+			<h1 class="p-2">Side Effects</h1>
+			<h4 class="p-2 fs-6 text fw-light" th:text="${med.side_effects}"></h4>
+		</div>
+		<a th:href="@{/users/checkout/{id}(id=${med.id})}" class="btn btn-outline-info btn-lg" >Buy Now</a>
+		<a th:href="@{/users/cart/{id}(id=${med.id})}" class="btn btn-outline-dark btn-lg" >To Cart</a>
+	</div>
+</section>
+<footer th:insert="Fragment/Footer::footer"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!-- /*
+* Bootstrap 5
+* Template Name: Furni
+* Template Author: Untree.co
+* Template URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap4" />
+
+		<!-- Bootstrap CSS -->
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+		<link href="/css/tiny-slider.css" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
+	</head>
+
+	<body>
+
+		<!-- Start Header/Navigation -->
+		<header th:insert="/Fragment/Header::header" ></header>
+		<!-- End Header/Navigation -->
+
+		<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Checkout</h1>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+
+		<div class="untree_co-section">
+		    <div class="container">
+
+		      <div class="row mb-5">
+		        <div class="col-md-12">
+		          <div class="border p-4 rounded" role="alert">
+		            Returning customer? <a href="#">Click here</a> to login
+		          </div>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="col-md-6 mb-5 mb-md-0">
+		          <h2 class="h3 mb-3 text-black">Billing Details</h2>
+		          <div class="p-3 p-lg-5 border bg-white">
+			          <form th:object="${UpdateEmail}" th:action="@{/users/payment/success/{id}(id=${id})}" method="post" id="razorpayForm">
+			          <div class="form-group">
+		              <label for="c_country" class="text-black">Country <span class="text-danger">*</span></label>
+		              <select id="c_country" name="country" class="form-control">
+		                <option value="1">Select a country</option>    
+		                <option value="2">bangladesh</option>    
+		                <option value="3">Algeria</option>    
+		                <option value="4">Afghanistan</option>    
+		                <option value="5">Ghana</option>    
+		                <option value="6">Albania</option>    
+		                <option value="7">Bahrain</option>    
+		                <option value="8">Colombia</option>    
+		                <option value="9">Dominican Republic</option>    
+		              </select>
+		            </div>
+		            <div class="form-group row">
+		              <div class="col-md-6">
+		                <label for="c_fname" class="text-black">First Name <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="c_fname" name="firstName">
+		              </div>
+		              <div class="col-md-6">
+		                <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="c_lname" name="lastName">
+		              </div>
+		            </div>
+
+		            <div class="form-group row">
+			            <div class="col-md-6">
+				            <label for="c_lname" class="text-black">User Name <span class="text-danger">*</span></label>
+				            <input type="text" class="form-control" id="fullname" name="username">
+			            </div>
+		            </div>
+<div class="form-group row">
+		              <div class="col-md-12">
+		                <label for="c_companyname" class="text-black">Company/House Name </label>
+		                <input type="text" class="form-control" id="c_companyname" name="PlaceName">
+		              </div>
+		            </div>
+
+		            <div class="form-group row">
+		              <div class="col-md-12">
+		                <label for="c_address" class="text-black">Address <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="c_address" name="addressLine1" placeholder="Street address">
+		              </div>
+		            </div>
+
+		            <div class="form-group mt-3">
+		              <input type="text" class="form-control" name="addressLine2" placeholder="Apartment, suite, unit etc. (optional)">
+		            </div>
+
+		            <div class="form-group row">
+		              <div class="col-md-6">
+		                <label for="state" class="text-black">State / Country <span class="text-danger">*</span></label>
+			              <select class="form-select" id="state" name="state" required>
+				              <option value="">Choose...</option>
+				              <option th:each="state : ${state}" value="*{state}" th:text="${state}"></option>
+
+		                </select>
+		              </div>
+		              <div class="col-md-6">
+		                <label for="c_postal_zip" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="c_postal_zip" name="zipcode">
+		              </div>
+		            </div>
+
+		            <div class="form-group row mb-5">
+		              <div class="col-md-6">
+		                <label for="c_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="c_email_address"  name="to" value="UpdateEmail">
+		              </div>
+		              <div class="col-md-6">
+		                <label for="c_phone" class="text-black">Phone <span class="text-danger">*</span></label>
+		                <input type="text" class="form-control" id="c_phone" name="phone" placeholder="Phone Number">
+		              </div>
+		            </div>
+
+		            <div class="form-group">
+		              <label for="c_create_account" class="text-black" data-bs-toggle="collapse" href="#create_an_account" role="button" aria-expanded="false" aria-controls="create_an_account"><input type="checkbox" value="1" id="c_create_account"> Create an account?</label>
+		              <div class="collapse" id="create_an_account">
+		                <div class="py-2 mb-4">
+		                  <p class="mb-3">Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
+		                  <div class="form-group">
+		                    <label for="c_account_password" class="text-black">Account Password</label>
+		                    <input type="email" class="form-control" id="c_account_password" name="c_account_password" placeholder="">
+		                  </div>
+		                </div>
+		              </div>
+		            </div>
+
+
+		            <div class="form-group">
+		              <label for="c_ship_different_address" class="text-black" data-bs-toggle="collapse" href="#ship_different_address" role="button" aria-expanded="false" aria-controls="ship_different_address"><input type="checkbox" value="1" id="c_ship_different_address"> Ship To A Different Address?</label>
+		              <div class="collapse" id="ship_different_address">
+		                <div class="py-2">
+
+		                  <div class="form-group">
+		                    <label for="c_diff_country" class="text-black">Country <span class="text-danger">*</span></label>
+		                    <select id="c_diff_country" class="form-control">
+		                      <option value="1">Select a country</option>    
+		                      <option value="2">bangladesh</option>
+		                      <option value="3">Algeria</option>
+		                      <option value="4">Afghanistan</option>
+		                      <option value="5">Ghana</option>
+		                      <option value="6">Albania</option>
+		                      <option value="7">Bahrain</option>
+		                      <option value="8">Colombia</option>
+		                      <option value="9">Dominican Republic</option>
+		                    </select>
+		                  </div>
+
+
+		                  <div class="form-group row">
+		                    <div class="col-md-6">
+		                      <label for="c_diff_fname" class="text-black">First Name <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="c_diff_fname" name="c_diff_fname">
+		                    </div>
+		                    <div class="col-md-6">
+		                      <label for="c_diff_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="c_diff_lname" name="c_diff_lname">
+		                    </div>
+		                  </div>
+
+		                  <div class="form-group row">
+		                    <div class="col-md-12">
+		                      <label for="c_diff_companyname" class="text-black">Company Name </label>
+		                      <input type="text" class="form-control" id="c_diff_companyname" name="c_diff_companyname">
+		                    </div>
+		                  </div>
+
+		                  <div class="form-group row  mb-3">
+		                    <div class="col-md-12">
+		                      <label for="c_diff_address" class="text-black">Address <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="c_diff_address" name="c_diff_address" placeholder="Street address">
+		                    </div>
+		                  </div>
+
+		                  <div class="form-group">
+		                    <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
+		                  </div>
+
+		                  <div class="form-group row">
+		                    <div class="col-md-6">
+		                      <label for="c_diff_state_country" class="text-black">State / Country <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="c_diff_state_country" name="c_diff_state_country">
+		                    </div>
+		                    <div class="col-md-6">
+		                      <label for="c_diff_postal_zip" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="c_diff_postal_zip" name="c_diff_postal_zip">
+		                    </div>
+		                  </div>
+
+		                  <div class="form-group row mb-5">
+		                    <div class="col-md-6">
+		                      <label for="c_diff_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="c_diff_email_address" name="c_diff_email_address">
+		                    </div>
+		                    <div class="col-md-6">
+		                      <label for="c_diff_phone" class="text-black">Phone <span class="text-danger">*</span></label>
+		                      <input type="text" class="form-control" id="c_diff_phone" name="c_diff_phone" placeholder="Phone Number">
+		                    </div>
+		                  </div>
+
+		                </div>
+
+		              </div>
+		            </div>
+
+		            <div class="form-group">
+		              <label for="c_order_notes" class="text-black">Order Notes</label>
+		              <textarea name="OrderNotes"  id="c_order_notes" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
+		            </div>
+					          <div class="form-check">
+						          <button id="rzp-button1" type="button" class="btn btn-black btn-sm" required>
+							          Razorpay
+						          </button>
+						          <input type="hidden" id="razorpay_order_id" name="razorpay_order_id" value="your_order_id_here" />
+						          <input id="razorpay_payment_id" type="hidden" name="razorpayPaymentID" />
+						          <input id="razorpay_signature" type="hidden" name="razorpay_signature" />
+
+					          </div>
+
+			          </form>
+		          </div>
+
+		        </div>
+		        <div class="col-md-6">
+
+
+
+		          <div class="row mb-5">
+				          <div class="col-md-12">
+					          <div class="card" th:each=" productinfo:${checkout}" >
+						          <h2 class="h3 mb-3 text-black">Your Order</h2>
+						          <div class="p-3 p-lg-5 border bg-white">
+		                <table class="table site-block-order-table mb-5">
+		                  <thead class="d-flex justify-content-start">
+		                    <th th:text="${productinfo.product_name}">Product</th>
+		                    <th th:text="${productinfo.product_price}">Total</th>
+		                  </thead>
+
+		                </table>
+
+		                <div class="border p-3 mb-3">
+		                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Cash on Delivery</a></h3>
+
+		                  <div class="collapse" id="collapsebank">
+		                    <div class="py-2">
+		                      <p class="mb-0">Make your payment directly to our Delivery Rider. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+		                    </div>
+		                  </div>
+		                </div>
+
+
+		                <div class="border p-3 mb-5">
+		                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsepaypal" role="button" aria-expanded="false" aria-controls="collapsepaypal">Paypal</a></h3>
+			                <div class="py-2">
+			                <p class="mb-0">Make your payment directly to our Delivery Rider. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+		                </div>
+		                  </div>
+		                </div>
+
+
+
+		              </div>
+		            </div>
+		          </div>
+
+		        </div>
+		      </div>
+		      <!-- </form> -->
+		    </div>
+
+		<!-- Start Footer Section -->
+<!-- 		<footer th:insert="/Fragments/Footer::footer" ></footer> -->
+		<!-- End Footer Section -->
+			<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+			<script>
+                // Assuming you have a form element with an ID like "checkout-form"
+                // Add an event listener to the button
+
+                // Replace 'your_api_key_here' with your actual Razorpay API key
+                var options = {
+                    key: 'rzp_test_BGPTgqrkVagzn6',
+                    name: "DJ Tiesto",          // Name of the payment receiver
+                    description: "Tron Legacy", // Description of the payment
+                    image: "https://s29.postimg.org/r6dj1g85z/daft_punk.jpg", // Image for the payment
+
+                    // Pre-fill customer information
+                    prefill: {
+                        name: document.getElementById("username"),
+                        email: document.getElementById("mail"),
+                        contact: document.getElementById("phone")
+
+                    },
+
+                    // Additional notes
+                    notes: {
+                        address:  document.getElementById("addressLine1"),
+                        merchant_order_id:  document.getElementById("id") // Replace with your order ID
+                    },
+
+                    // Theme customization
+                    theme: {
+                        color: "#F37254" // Custom color for the payment form
+                    },
+
+                    // Your order ID goes here
+                };
+                console.log(document.getElementById("username"));
+                console.log(document.getElementById("mail"));
+                console.log(document.getElementById("phone"));
+
+                options.handler = function(res) {
+                    // Fill the form fields with payment information
+                    document.getElementById('razorpay_payment_id').value = res.razorpay_payment_id;
+                    document.getElementById('razorpay_signature').value = res.razorpay_signature;
+                    document.getElementById('razorpay_order_id').value = res.razorpay_order_id; // Replace with order ID
+
+                    // Submit the form to your server
+                    document.getElementById('razorpayForm').submit();
+                };
+
+                // Create the Razorpay object
+                var rzp = new Razorpay(options);
+
+                // Trigger the payment popup when the button is clicked
+                document.getElementById('rzp-button1').onclick = function(e){
+                    rzp.open();
+                    e.preventDefault();
+                };
+			</script>
+
+
+
+
+
+			<script src="/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/tiny-slider.js"></script>
+		<script src="/js/custom.js"></script>
+			<footer th:insert="Fragment/Footer::footer"></footer>
+
+	</body>
+
+</html>
