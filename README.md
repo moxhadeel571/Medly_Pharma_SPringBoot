@@ -5,6 +5,7 @@ A Pharma Store with 1500+ of Medicines and Drugs build in SpringBoot
 Medly Pharma is a web application built using Spring Boot for pharmaceutical management.
 
 ## Table of Contents
+-[Preview](#preview)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
   - [Installation](#installation)
@@ -14,6 +15,10 @@ Medly Pharma is a web application built using Spring Boot for pharmaceutical man
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
+## Preview
+
+https://github.com/moxhadeel571/Grocery_Booking_SpringBoot/assets/60618158/d547611c-e819-492f-93fa-5cfe1c189ccb
+
 
 ## Prerequisites
 
