@@ -69,7 +69,7 @@ Before you proceed, ensure you have the following prerequisites:
 
 2. Make sure you've configured your `application.properties` with the correct MongoDB connection details in your Spring Boot project.
 
-3. Download the dataset provided in the GitHub repository (`dataset.json`).
+3. Download the dataset provided in the GitHub repository [`dataset.json`](https://drive.google.com/file/d/1O0vXtrycJ3bgVCNXStS76tmUV9PQmZuA/view?usp=drive_link).
 
 4. In MongoDB Compass, navigate to your selected database.
 
