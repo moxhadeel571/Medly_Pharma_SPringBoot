@@ -104,6 +104,9 @@ Ensure your `application.properties` in the Spring Boot project contains the cor
 
 Now, you have successfully connected MongoDB Compass to your database, imported the provided dataset, and added an initial product to your Spring Boot application. You can now use this dataset for testing and development.
 
+-  Guide 
+https://github.com/moxhadeel571/Grocery_Booking_SpringBoot/assets/60618158/30a26afb-89d8-4bfc-ade3-ba31cfa2a17c
+
 
 ## Features
 
